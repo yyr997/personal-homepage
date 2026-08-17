@@ -330,6 +330,7 @@
   }
 
   function renderInsights() {
+    if (window.sharedWritingEnabled) return;
     const target = $('[data-render="insights"]');
     if (!target) return;
     document.title = `Insights - ${data.profile.name}`;
@@ -358,6 +359,7 @@
   }
 
   function renderReflections() {
+    if (window.sharedWritingEnabled) return;
     const target = $('[data-render="reflections"]');
     if (!target) return;
     document.title = `Reflections - ${data.profile.name}`;
@@ -406,6 +408,7 @@
   }
 
   function renderCompose() {
+    if (window.sharedWritingEnabled) return;
     const target = $('[data-render="compose"]');
     if (!target) return;
     const params = new URLSearchParams(window.location.search);

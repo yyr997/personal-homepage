@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="闫仪冉的个人主页，展示策略产品经理经历、项目作品、教育背景与专业能力。">
+    <title>闫仪冉 - 策略产品经理</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="返回顶部" data-bind="profile.shortName">Home</a>
+      <nav class="nav" aria-label="页面导航">
+        <a href="#about">关于</a>
+        <a href="#education">教育</a>
+        <a href="#experience">经历</a>
+        <a href="#projects">项目</a>
+        <a href="insights.html">随记</a>
+        <a href="reflections.html">沉淀</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="切换深浅色主题" title="切换主题">
+        <span aria-hidden="true">◐</span>
+      </button>
+    </header>
+
+    <main id="top" class="shell">
+      <aside class="sidebar" aria-label="个人信息">
+        <section class="profile-panel">
+          <img class="avatar" src="assets/profile.jpg" alt="闫仪冉照片">
+          <p class="eyebrow" data-bind="profile.role">策略产品经理</p>
+          <h1 data-bind="profile.name">你的姓名</h1>
+          <p class="bio-line" data-bind="profile.tagline">用一句话介绍你正在研究、创造或相信的事情。</p>
+          <a class="email" href="mailto:your.email@example.com" data-bind="profile.email">your.email@example.com</a>
+          <div class="social-links" data-render="links"></div>
+        </section>
+
+        <section class="note-panel">
+          <p class="note-title">Current Focus</p>
+          <p data-bind="profile.current">正在寻找有趣的问题、可靠的系统和长期主义的合作者。</p>
+        </section>
+      </aside>
+
+      <div class="content">
+        <section id="about" class="section reveal">
+          <div class="section-heading">
+            <p class="section-kicker">About</p>
+            <h2>关于我</h2>
+          </div>
+          <div class="prose" data-render="about"></div>
+          <div class="quick-facts" data-render="facts"></div>
+        </section>
+
+        <section id="education" class="section reveal">
+          <div class="section-heading">
+            <p class="section-kicker">Education</p>
+            <h2>教育经历</h2>
+          </div>
+          <div class="timeline" data-render="education"></div>
+
+          <ul class="education-summary" data-render="education-summary"></ul>
+
+          <div class="nested-section">
+            <h3>论文与研究</h3>
+            <ol class="publication-list" data-render="publications"></ol>
+          </div>
+
+        </section>
+
+        <section id="experience" class="section reveal">
+          <div class="section-heading">
+            <p class="section-kicker">Experience</p>
+            <h2>实习经历</h2>
+          </div>
+          <div class="timeline" data-render="experience"></div>
+        </section>
+
+        <section id="projects" class="section reveal priority-section">
+          <div class="section-heading">
+            <p class="section-kicker">Selected Projects</p>
+            <h2>产品项目</h2>
+          </div>
+          <div class="project-grid" data-render="projects"></div>
+        </section>
+
+        <footer class="footer">
+          <p><span data-bind="profile.name">你的姓名</span> © <span data-render="year"></span></p>
+          <p>Strategy Product Portfolio</p>
+        </footer>
+      </div>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

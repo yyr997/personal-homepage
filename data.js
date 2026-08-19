@@ -269,6 +269,16 @@ window.siteData = {
                 ]
               }
             ]
+          },
+          {
+            title: "四、最终收益",
+            paragraphs: [
+              "完成智能优惠券 Uplift 模型的产品化落地，打通投放与发券平台、模型策略服务及 C 端用户触达链路，形成从人群识别、优惠券创建与发放到领取核销的完整业务闭环。"
+            ],
+            bullets: [
+              "<strong>模型与数据资产：</strong>第一阶段累计沉淀 <strong>60 万+</strong> 实验样本，覆盖不同干预响应类型，为模型学习用户差异、识别营销敏感人群及后续策略迭代提供了稳定的数据基础。",
+              "<strong>预算与经营结果：</strong>在满足预算约束的前提下，前两个季度 <strong>Charge ROI 均高于 1.5</strong>、<strong>T-Charge ROI 均高于 2.5</strong>，累计实现 <strong>700 万+</strong> 增量收入，验证了智能补贴策略的业务价值与持续放量能力。"
+            ]
           }
         ]
       }

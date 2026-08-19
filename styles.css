@@ -1135,7 +1135,7 @@ h1 {
   background: transparent;
 }
 
-.project-detail[data-project-id="chengfeng-platform"] .case-major-heading,
+.project-detail[data-project-id="chengfeng-platform"] .case-subsection > .case-major-heading,
 .project-detail[data-project-id="chengfeng-platform"] .case-major-group > .case-major-heading {
   display: flex;
   align-items: center;

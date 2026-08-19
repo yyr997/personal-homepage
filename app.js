@@ -198,7 +198,7 @@
           <img src="${section.image.src}" alt="${section.image.alt}">
         </figure>
       ` : ""}
-      ${section.subhead ? `<h3 class="case-subhead">${section.subhead}</h3>` : ""}
+      ${section.subhead ? `<h3 class="case-subhead case-major-heading">${section.subhead}</h3>` : ""}
       ${section.paragraphs ? section.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("") : ""}
       ${section.noteBullets ? `<ul class="case-bullets case-note-bullets">${section.noteBullets.map((item) => `<li>${item}</li>`).join("")}</ul>` : ""}
       ${section.bullets ? `<ul class="case-bullets">${section.bullets.map((item) => `<li>${item}</li>`).join("")}</ul>` : ""}
@@ -223,8 +223,8 @@
         <h3>${subsection.title}</h3>
         ${renderDetailContent(subsection)}
         ${subsection.groups ? subsection.groups.map((group) => `
-          <div class="case-subgroup">
-            <h4>${group.title}</h4>
+          <div class="case-subgroup ${/^[23]\. (项目方案|核心价值)$/.test(group.title) ? "case-major-group" : ""}">
+            <h4 class="${/^[23]\. (项目方案|核心价值)$/.test(group.title) ? "case-major-heading" : ""}">${group.title}</h4>
             ${renderDetailContent(group)}
           </div>
         `).join("") : ""}

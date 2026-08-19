@@ -1109,13 +1109,7 @@ h1 {
 }
 
 .project-detail[data-project-id="chengfeng-platform"] .case-subhead {
-  display: inline-flex;
-  margin: 2px 0 12px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
-  color: var(--accent);
-  font-size: 15px;
+  margin: 2px 0 14px;
 }
 
 .project-detail[data-project-id="chengfeng-platform"] .case-subgroup {
@@ -1131,6 +1125,40 @@ h1 {
   color: var(--accent);
   font-size: 17px;
   line-height: 1.5;
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .case-major-group {
+  margin-top: 30px;
+  padding: 0;
+  border-left: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .case-major-heading,
+.project-detail[data-project-id="chengfeng-platform"] .case-major-group > .case-major-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 0 0 10px;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line));
+  border-radius: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 850;
+  line-height: 1.45;
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .case-major-heading::before {
+  width: 4px;
+  height: 1.05em;
+  border-radius: 999px;
+  background: var(--accent);
+  content: "";
+  flex: 0 0 auto;
 }
 
 .project-detail[data-project-id="chengfeng-platform"] .case-bullets {

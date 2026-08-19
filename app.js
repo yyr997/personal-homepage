@@ -201,6 +201,13 @@
       ${section.paragraphs ? section.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("") : ""}
       ${section.noteBullets ? `<ul class="case-bullets case-note-bullets">${section.noteBullets.map((item) => `<li>${item}</li>`).join("")}</ul>` : ""}
       ${section.bullets ? `<ul class="case-bullets">${section.bullets.map((item) => `<li>${item}</li>`).join("")}</ul>` : ""}
+      ${section.metrics ? `<div class="case-metrics">${section.metrics.map((metric) => `
+        <div class="case-metric">
+          <strong>${metric.value}</strong>
+          <span>${metric.label}</span>
+          ${metric.note ? `<small>${metric.note}</small>` : ""}
+        </div>
+      `).join("")}</div>` : ""}
       ${section.table ? renderCaseTable(section.table) : ""}
       ${section.conclusion ? `<p class="case-conclusion">${section.conclusion}</p>` : ""}
       ${section.note ? `<blockquote class="case-note">${section.note}</blockquote>` : ""}

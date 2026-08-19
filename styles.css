@@ -896,6 +896,41 @@ h1 {
   font-weight: 850;
 }
 
+.case-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.case-metric {
+  display: grid;
+  align-content: start;
+  gap: 5px;
+  min-height: 116px;
+  padding: 20px 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--accent) 9%, var(--surface)), var(--surface));
+}
+
+.case-metric strong {
+  color: var(--accent);
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1;
+}
+
+.case-metric span {
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.case-metric small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
 .case-note-bullets {
   margin-top: 10px;
 }
@@ -1581,6 +1616,10 @@ h1 {
   .project-grid,
   .detail-grid {
     grid-template-columns: 1fr;
+  }
+
+  .case-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .fact strong {

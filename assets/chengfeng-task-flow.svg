@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">乘风 Lite 任务中心用户流程</title>
+  <desc id="desc">用户从首页发现任务，进入任务中心领取并完成任务，系统校验完成状态并反馈奖励。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#6b7280"/></marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#12315f" flood-opacity=".12"/></filter>
+    <style>
+      .lane{fill:#f8fafc;stroke:#dbe3ef;stroke-width:2}.laneTitle{font:700 22px system-ui,sans-serif;fill:#24364b}.box{fill:#fff;stroke:#a9b8ca;stroke-width:2;rx:12;filter:url(#shadow)}.task{fill:#fff9c9;stroke:#e9c94d}.action{fill:#e1f4b5;stroke:#96c956}.state{fill:#ffdede;stroke:#e58f8f}.decision{fill:#e8f1ff;stroke:#7aa6e8;stroke-width:2}.text{font:600 17px system-ui,sans-serif;fill:#25364a;text-anchor:middle}.small{font:500 14px system-ui,sans-serif;fill:#53677e;text-anchor:middle}.line{fill:none;stroke:#6b7280;stroke-width:2.5;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="700" fill="#fff"/>
+  <rect class="lane" x="20" y="20" width="365" height="660" rx="16"/><rect class="lane" x="418" y="20" width="365" height="660" rx="16"/><rect class="lane" x="816" y="20" width="364" height="660" rx="16"/>
+  <text class="laneTitle" x="202" y="58" text-anchor="middle">首页</text><text class="laneTitle" x="600" y="58" text-anchor="middle">任务中心</text><text class="laneTitle" x="998" y="58" text-anchor="middle">任务行为页面</text>
+  <rect class="box" x="105" y="88" width="195" height="68"/><text class="text" x="202" y="129">登录乘风 Lite</text>
+  <path class="line" d="M202 156V198"/><polygon class="decision" points="202,190 282,238 202,286 122,238"/><text class="small" x="202" y="232">是否完成</text><text class="small" x="202" y="252">全部任务</text>
+  <path class="line" d="M122 238H80V350H112"/><text class="small" x="92" y="222">否</text><rect class="box task" x="112" y="315" width="180" height="70"/><text class="text" x="202" y="344">首页展示</text><text class="small" x="202" y="366">3 个待领取任务</text>
+  <path class="line" d="M282 238H330V350H292"/><text class="small" x="314" y="222">是</text><rect class="box task" x="112" y="408" width="180" height="70"/><text class="text" x="202" y="437">收起首页</text><text class="small" x="202" y="459">任务模块</text>
+  <path class="line" d="M202 385V408"/><path class="line" d="M202 478V520"/><rect class="box action" x="112" y="520" width="180" height="64"/><text class="text" x="202" y="559">点击领取任务</text>
+  <path class="line" d="M300 122H505"/><rect class="box" x="505" y="88" width="190" height="68"/><text class="text" x="600" y="117">打开「我的」</text><text class="small" x="600" y="139">任务中心</text>
+  <path class="line" d="M600 156V220"/><rect class="box" x="505" y="220" width="190" height="88"/><text class="small" x="600" y="247">展示待领取、进行中</text><text class="small" x="600" y="270">已完成、已过期</text><text class="small" x="600" y="291">任务状态</text>
+  <path class="line" d="M292 552H505V365"/><rect class="box state" x="505" y="332" width="190" height="66"/><text class="small" x="600" y="360">更新任务中心</text><text class="small" x="600" y="382">任务状态</text>
+  <path class="line" d="M202 584V625H895V424"/><rect class="box action" x="112" y="606" width="180" height="52"/><text class="text" x="202" y="639">点击「去完成」</text>
+  <rect class="box" x="895" y="350" width="205" height="74"/><text class="text" x="998" y="380">按任务指引</text><text class="small" x="998" y="402">完成经营行为</text>
+  <path class="line" d="M998 424V486H680"/><polygon class="decision" points="600,438 680,486 600,534 520,486"/><text class="small" x="600" y="480">判断任务</text><text class="small" x="600" y="500">是否完成</text>
+  <path class="line" d="M600 534V578"/><rect class="box state" x="485" y="578" width="230" height="68"/><text class="small" x="600" y="605">弹窗反馈任务完成</text><text class="small" x="600" y="627">并同步状态与奖励</text>
+  <path class="line" d="M520 486H440V365H505"/><text class="small" x="470" y="470">否</text>
+</svg>

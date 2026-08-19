@@ -127,7 +127,7 @@ window.siteData = {
       id: "chengfeng-platform",
       title: "乘风广告平台增长能力建设",
       summary: "围绕客户全生命周期，完善任务激励、投放保障与客群准入能力，推动广告客户增长与交易规模提升。",
-      tags: ["平台产品", "电商广告", "客户增长", "任务体系"],
+      tags: ["平台产品", "电商广告", "PRD需求文档", "客户增长"],
       status: "已上线",
       detailPage: {
         sections: [

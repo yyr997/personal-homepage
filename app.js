@@ -178,6 +178,7 @@
 
     const params = new URLSearchParams(window.location.search);
     const project = data.projects.find((item) => item.id === params.get("id")) || data.projects[0];
+    target.dataset.projectId = project.id;
     document.title = `${project.title} - ${data.profile.name}`;
     const renderCaseTable = (table) => `
       <div class="case-table-wrap">

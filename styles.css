@@ -1038,6 +1038,149 @@ h1 {
   margin-top: 8px;
 }
 
+/* Chengfeng case study: stronger hierarchy for long-form product documentation. */
+.project-detail[data-project-id="chengfeng-platform"] {
+  padding: clamp(24px, 5vw, 52px);
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .project-case-section {
+  margin-top: 30px;
+  padding: clamp(24px, 4vw, 38px);
+  border: 1px solid color-mix(in srgb, var(--accent) 14%, var(--line));
+  border-radius: 16px;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--accent) 3%, var(--surface)), var(--surface) 48%);
+  box-shadow: 0 16px 44px rgba(31, 102, 209, 0.06);
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .project-case-section.first-detail-block {
+  padding-top: clamp(24px, 4vw, 38px);
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .project-case-section > h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  font-size: clamp(22px, 3vw, 28px);
+  line-height: 1.25;
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .project-case-section > h2::before {
+  width: 5px;
+  height: 1.25em;
+  border-radius: 999px;
+  background: var(--accent);
+  content: "";
+  flex: 0 0 auto;
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .project-case-section > p {
+  max-width: 72ch;
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .detail-prose p {
+  text-indent: 0;
+  line-height: 1.86;
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .case-subsection {
+  position: relative;
+  margin-top: 24px;
+  padding: clamp(22px, 4vw, 34px);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--surface) 96%, var(--accent));
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .case-subsection::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent) 18%, transparent));
+  content: "";
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .case-subsection > h3 {
+  margin-bottom: 22px;
+  color: var(--accent);
+  font-size: clamp(20px, 2.5vw, 24px);
+  line-height: 1.45;
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .case-subhead {
+  display: inline-flex;
+  margin: 2px 0 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+  color: var(--accent);
+  font-size: 15px;
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .case-subgroup {
+  margin-top: 24px;
+  padding: 20px 22px;
+  border-left: 2px solid color-mix(in srgb, var(--accent) 34%, var(--line));
+  border-radius: 0 10px 10px 0;
+  background: color-mix(in srgb, var(--soft) 45%, transparent);
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .case-subgroup > h4 {
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .case-bullets {
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .case-bullets li {
+  padding-left: 22px;
+  line-height: 1.75;
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .case-bullets li::before {
+  content: "→";
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .case-conclusion {
+  margin-top: 20px;
+  padding: 16px 18px;
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--line));
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent) 7%, var(--surface));
+  font-weight: 650;
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .case-figure {
+  margin-top: 26px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .case-figure img {
+  box-shadow: none;
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .case-footer-note {
+  margin-top: 28px;
+  padding: 18px 20px;
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--line));
+  border-left: 4px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+}
+
+.project-detail[data-project-id="chengfeng-platform"] .case-metric {
+  border-color: color-mix(in srgb, var(--accent) 18%, var(--line));
+  box-shadow: 0 10px 24px rgba(31, 102, 209, 0.05);
+}
+
 .detail-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1659,6 +1802,15 @@ h1 {
 
   .project-detail {
     padding: 26px 18px;
+  }
+
+  .project-detail[data-project-id="chengfeng-platform"] .project-case-section,
+  .project-detail[data-project-id="chengfeng-platform"] .case-subsection {
+    padding: 22px 18px;
+  }
+
+  .project-detail[data-project-id="chengfeng-platform"] .case-subgroup {
+    padding: 16px;
   }
 
   .item-head {

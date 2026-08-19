@@ -234,6 +234,7 @@
         <h2>${section.title}</h2>
         ${renderDetailContent(section)}
         ${section.subsections ? section.subsections.map(renderDetailSubsection).join("") : ""}
+        ${section.footerNote ? `<blockquote class="case-note case-footer-note">${section.footerNote}</blockquote>` : ""}
       </section>
     `;
     const customDetailHTML = project.detailPage ? `

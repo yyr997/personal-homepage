@@ -1,0 +1,181 @@
+/* An editorial case-study layout. All rules are scoped to this project. */
+body.long-tail-page {
+  --bg: #f7f8fa;
+  --text: #1c2739;
+  --muted: #343a43;
+  --accent: #2454b8;
+  --line: rgba(40,57,84,.13);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+:root[data-theme="dark"] body.long-tail-page {
+  --bg: #111925;
+  --text: #e9eef7;
+  --muted: #c7d0dd;
+  --accent: #91b7ff;
+  --line: rgba(180,201,232,.17);
+}
+.long-tail-page .topbar { padding: 0 max(32px, calc((100% - 1220px)/2)); background: color-mix(in srgb, var(--bg) 90%, transparent); }
+.long-tail-page .nav { border: 0; background: none; }
+.long-tail-page .nav a { font-weight: 500; }
+.long-tail-page .theme-toggle { background: transparent; box-shadow: none; border-color: var(--line); }
+.long-tail-page .detail-shell.long-tail-shell { width: min(1220px, calc(100% - 96px)); padding: 40px 0 96px; }
+.long-tail-page .project-detail { padding: 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+.long-tail-page .back-link { font-size: 12px; color: var(--muted); font-weight: 500; }
+.long-tail-page .interest-project-header { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: end; padding: 34px 0 56px; border-bottom: 1px solid var(--line); }
+.long-tail-page .interest-project-header .section-kicker { margin: 0 0 16px; color: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: .08em; }
+.long-tail-page .interest-project-header h1 { margin: 0; font-family: "Songti SC", "Noto Serif CJK SC", serif; font-size: clamp(36px, 3.8vw, 48px); font-weight: 700; line-height: 1.1; letter-spacing: -.045em; }
+.long-tail-page .interest-project-header h1 span { display: inline-block; margin-left: 18px; font: 400 22px/1.5 ui-sans-serif, system-ui, sans-serif; color: var(--muted); letter-spacing: .1em; }
+.long-tail-page .interest-project-overview .detail-summary { font-size: 16px; color: var(--muted); line-height: 1.9; }
+.long-tail-page .interest-project-overview .tags { gap: 16px; margin-top: 16px; }
+.long-tail-page .interest-project-overview .tag { padding: 0; border: 0; background: none; border-radius: 0; font-size: 13px; color: var(--accent); font-weight: 500; }
+.long-tail-page .first-detail-block { margin-top: 54px; padding-top: 0; }
+.long-tail-page .project-case-section > h2 { font-size: 25px; color: var(--text); font-weight: 700; letter-spacing: .01em; margin: 0 0 26px; padding-left: 14px; border-left: 3px solid var(--accent); line-height: 1.35; }
+.long-tail-page .interest-background p { text-indent: 0; }
+.long-tail-page .interest-opening { display: grid; grid-template-columns: 1.25fr 1fr; gap: 76px; align-items: end; }
+.long-tail-page .interest-opening .interest-lead { margin: 0; font-size: clamp(21px, 2vw, 26px); font-weight: 550; color: var(--text); line-height: 1.55; letter-spacing: -.035em; }
+.long-tail-page .interest-lead span { color: var(--accent); }
+.long-tail-page .interest-opening .interest-introduction { margin: 0 0 5px; color: var(--muted); font-size: 16px; line-height: 1.9; }
+.long-tail-page .interest-comparison { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px; margin-top: 42px; }
+.long-tail-page .interest-platform { min-width: 0; padding: 30px 28px 26px; border-radius: 24px; background: #fff; box-shadow: 0 12px 44px rgba(32,55,92,.035); color: #1c2739; }
+.long-tail-page .interest-platform-heading { display: flex; gap: 14px; align-items: center; }
+.long-tail-page .interest-platform-name { flex-shrink: 0; padding: 5px 10px; border: 1px solid #e4e8ee; border-radius: 6px; font-size: 14px; font-weight: 600; line-height: 1.5; color: #343a43; }
+.long-tail-page .interest-platform-heading h3 { margin: 0; font-size: 18px; font-weight: 600; letter-spacing: -.02em; }
+.long-tail-page .interest-background figure { margin: 0; }
+.long-tail-page .interest-wall { position: relative; margin-top: 20px !important; }
+.long-tail-page .interest-scene { position: relative; aspect-ratio: 4/3; isolation: isolate; overflow: hidden; border-radius: 12px; background: #fff; }
+.long-tail-page .interest-scene-cloud { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .44; }
+.long-tail-page .interest-wall video { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; background: transparent; }
+.long-tail-page .interest-wall .interest-media-controls { margin-top: 12px; flex-wrap: wrap; gap: 4px; }
+.long-tail-page .interest-media-controls { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 34px; color: var(--muted); font-size: 13px; }
+.long-tail-page .interest-background button { font: inherit; cursor: pointer; }
+.long-tail-page .interest-media-controls button { border: 0; border-radius: 6px; background: transparent; padding: 7px 12px; min-height: 34px; color: var(--accent); font-size: 13px; }
+.long-tail-page .interest-platform .interest-media-controls button { color: #343a43; }
+.long-tail-page .interest-media-controls button:hover { color: #2454b8; background: #eef3fb; }
+.long-tail-page .interest-background button:focus-visible { outline: 2px solid #4d75c6; outline-offset: 4px; }
+.long-tail-page .interest-background .interest-observation { margin-top: 20px; color: #343a43; font-size: 15px; font-weight: 500; text-align: center; }
+.long-tail-page .interest-background .interest-sample-note { margin-top: 18px; color: var(--muted); text-align: right; font-size: 13px; }
+.long-tail-page .interest-distribution { display: grid; grid-template-columns: minmax(300px,.9fr) minmax(0,1.6fr); gap: 36px 48px; align-items: start; margin-top: 100px; }
+.long-tail-page .interest-section-label { display: block; margin-bottom: 18px; font-size: 14px; color: var(--accent); letter-spacing: .08em; }
+.long-tail-page .interest-distribution-copy > .interest-section-label { font-size: 28px; }
+.long-tail-page .interest-section-label::before { content: ""; display: inline-block; width: 20px; height: 1px; margin: 0 9px 4px 0; background: currentColor; }
+.long-tail-page .interest-distribution h3 { font-size: 23px; font-weight: 600; line-height: 1.6; letter-spacing: -.025em; }
+.long-tail-page .interest-distribution-copy p { margin-top: 18px; color: var(--muted); font-size: 16px; line-height: 1.9; }
+.long-tail-page .interest-distribution figure { padding: 20px 20px 12px; border-radius: 20px; background: #fff; }
+.long-tail-page .interest-distribution video { display: block; width: 100%; aspect-ratio: 16/9; background: #fff; object-fit: contain; }
+.long-tail-page .interest-distribution .interest-media-controls { justify-content: space-between; gap: 8px; flex-wrap: wrap; margin-top: 10px; color: #343a43; }
+.long-tail-page .interest-distribution .interest-media-controls > div { display: flex; flex-shrink: 0; }
+.long-tail-page .interest-distribution .interest-media-controls button { color: #343a43; }
+.long-tail-page .interest-distribution-media { min-width: 0; }
+.long-tail-page .interest-background .interest-distribution-note { margin: 12px 20px 0; color: #929bad; font-size: 13px; font-weight: 400; line-height: 1.8; }
+.long-tail-page .interest-conclusion { margin-top: 28px; }
+.long-tail-page .interest-conclusion h3 { max-width: 28em; margin: 0; color: var(--text); font-size: clamp(22px,2vw,26px); font-weight: 600; letter-spacing: -.025em; }
+.long-tail-page .interest-conclusion p { max-width: 46em; margin-top: 18px; color: var(--muted); font-size: 16px; line-height: 1.9; }
+.long-tail-page .interest-conclusion strong { color: var(--muted); font-weight: 500; }
+.long-tail-page .interest-values { display: flex; gap: 48px; margin-top: 36px; color: var(--accent); font-family: "Songti SC",serif; font-size: 27px; font-weight: 600; letter-spacing: .06em; }
+.long-tail-page .interest-values span + span { position: relative; }
+.long-tail-page .interest-values span + span::before { content: "/"; position: absolute; left: -29px; color: #c5d0e2; font: 300 28px/1.7 ui-sans-serif,system-ui,sans-serif; }
+.long-tail-page .interest-cloud-dialog { width: min(1100px, calc(100% - 32px)); max-height: calc(100dvh - 48px); padding: 20px; border: 0; border-radius: 16px; color: #1c2739; background: #fff; box-shadow: 0 32px 100px rgba(0,0,0,.2); }
+.long-tail-page .interest-cloud-dialog::backdrop { background: rgba(17,27,43,.65); backdrop-filter: blur(5px); }
+.long-tail-page .interest-dialog-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
+.long-tail-page .interest-dialog-heading h3 { margin: 0; font-size: 14px; font-weight: 500; }
+.long-tail-page .interest-dialog-heading button { flex-shrink: 0; padding: 8px 12px; border: 0; border-radius: 6px; background: #f4f6f9; color: #343a43; font-size: 12px; }
+.long-tail-page .interest-cloud-dialog > img { display: block; width: 100%; max-height: calc(100dvh - 150px); object-fit: contain; background: #fff; }
+body.interest-modal-open { overflow: hidden; }
+.long-tail-page .interest-background .interest-media-error { color: #343a43; font-size: 12px; text-align: center; }
+.long-tail-page .interest-plan-section { margin-top: 80px; padding-top: 40px; }
+.long-tail-page .interest-plan-video { width: 82%; max-width: 1000px; margin: 30px 0 0; padding: 16px 20px 8px; border-radius: 20px; background: #fff; }
+.long-tail-page .interest-plan-video video { display: block; width: 100%; aspect-ratio: 16 / 5; object-fit: contain; background: #fff; }
+.long-tail-page .interest-plan-video .interest-media-controls { color: #343a43; }
+.long-tail-page .interest-plan-subsection { margin-top: 40px; padding-bottom: 32px; border-bottom: 1px solid var(--line); }
+.long-tail-page .interest-plan-subsection:last-child { padding-bottom: 0; border-bottom: 0; }
+.long-tail-page .interest-plan-subsection h3 { margin: 0; font-size: 23px; font-weight: 600; line-height: 1.6; }
+.long-tail-page .interest-plan p { text-indent: 0; }
+.long-tail-page .interest-plan .interest-plan-prompt { margin-top: 8px; color: var(--muted); font-size: 14px; font-weight: 400; line-height: 1.8; }
+.long-tail-page .interest-plan .interest-plan-placeholder { margin-top: 24px; color: var(--muted); font-size: 15px; font-weight: 400; }
+.long-tail-page .interest-definition { margin-top: 26px; }
+.long-tail-page .interest-plan .interest-definition-introduction { max-width: 68em; color: var(--muted); font-size: 16px; line-height: 1.9; }
+.long-tail-page .interest-definition-rules { margin-top: 24px; }
+.long-tail-page .interest-definition-rules .case-table-wrap { margin-top: 0; background: var(--surface); border-radius: 12px; }
+.long-tail-page .interest-definition-rules .case-table { table-layout: fixed; min-width: 660px; }
+.long-tail-page .interest-definition-rules .case-table th:first-child,
+.long-tail-page .interest-definition-rules .case-table td:first-child { width: 14%; }
+.long-tail-page .interest-definition-rules .case-table th,
+.long-tail-page .interest-definition-rules .case-table td { padding: 18px; font-size: 15px; line-height: 1.8; }
+.long-tail-page .interest-definition-rules .case-table th { font-size: 17px; font-weight: 600; background: var(--surface); }
+.long-tail-page .interest-definition-rules .case-table th:not(:first-child) { color: var(--accent); }
+.long-tail-page .interest-definition-rules .case-table td { color: var(--muted); }
+.long-tail-page .interest-definition-rules .case-table td:first-child { font-weight: 500; background: var(--bg); }
+.long-tail-page .interest-definition-rules .case-table strong { font-weight: 600; }
+.long-tail-page .interest-definition h4 { margin: 36px 0 0; color: var(--text); font-size: 20px; font-weight: 600; line-height: 1.6; }
+.long-tail-page .interest-plan .interest-definition-note { margin-top: 10px; color: #768398; font-size: 14px; font-weight: 400; line-height: 1.8; }
+.long-tail-page .interest-audience-sample { min-width: 0; margin: 0; }
+.long-tail-page .interest-audience-sample h5 { margin: 0 0 14px; color: var(--text); font-size: 17px; font-weight: 600; line-height: 1.6; }
+.long-tail-page .interest-audience-gallery { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; margin-top: 24px; }
+.long-tail-page .interest-audience-gallery .interest-audience-sample { display: flex; flex-direction: column; }
+.long-tail-page .interest-audience-gallery .interest-audience-sample h5 { min-height: 1.6em; }
+.long-tail-page .interest-audience-image { position: relative; display: block; width: 100%; padding: 12px; border: 0; border-radius: 16px; background: #fff; cursor: zoom-in; }
+.long-tail-page .interest-audience-image img { display: block; width: 100%; height: auto; aspect-ratio: 8/5; object-fit: contain; }
+.long-tail-page .interest-audience-image > span { position: absolute; right: 18px; bottom: 10px; padding: 2px 6px; border-radius: 4px; color: #343a43; background: rgba(255,255,255,.9); font-size: 12px; }
+.long-tail-page .interest-audience-image:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.long-tail-page .interest-audience-sample figcaption { margin-top: 14px; color: var(--muted); font-size: 14px; line-height: 1.85; }
+.long-tail-page .interest-plan .interest-definition-conclusion { margin-top: 28px; padding: 4px 0 4px 18px; border-left: 3px solid var(--accent); color: var(--muted); background: transparent; font-size: 16px; line-height: 1.9; }
+@media (max-width: 1000px) {
+  .long-tail-page .detail-shell.long-tail-shell { width: calc(100% - 64px); }
+  .long-tail-page .interest-project-header { gap: 40px; }
+  .long-tail-page .interest-opening { grid-template-columns: 1fr; gap: 22px; }
+  .long-tail-page .interest-opening .interest-introduction { max-width: 45em; }
+  .long-tail-page .interest-platform { padding: 22px 18px; }
+  .long-tail-page .interest-platform-heading { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .long-tail-page .interest-distribution { grid-template-columns: 1fr; gap: 30px; }
+  .long-tail-page .interest-distribution h3 { font-size: 24px; }
+  .long-tail-page .interest-audience-gallery .interest-audience-sample h5 { min-height: 3.2em; }
+}
+@media (max-width: 700px) {
+  .long-tail-page .topbar { padding: 0 20px; }
+  .long-tail-page .detail-shell.long-tail-shell { width: calc(100% - 40px); padding: 28px 0 60px; }
+  .long-tail-page .project-detail { padding: 0; }
+  .long-tail-page .interest-project-header { grid-template-columns: 1fr; gap: 24px; padding: 30px 0 36px; }
+  .long-tail-page .interest-project-header h1 { font-size: 38px; }
+  .long-tail-page .interest-project-header h1 span { font-size: 17px; margin-left: 12px; }
+  .long-tail-page .interest-project-overview .detail-summary { font-size: 15px; }
+  .long-tail-page .first-detail-block { margin-top: 32px; }
+  .long-tail-page .interest-opening .interest-lead { font-size: 21px; }
+  .long-tail-page .interest-opening .interest-introduction { font-size: 15px; }
+  .long-tail-page .interest-comparison { grid-template-columns: 1fr; gap: 24px; margin-top: 30px; }
+  .long-tail-page .interest-platform { border-radius: 18px; padding: 24px 18px; }
+  .long-tail-page .interest-platform-heading { flex-direction: row; align-items: center; }
+  .long-tail-page .interest-platform-heading h3 { font-size: 16px; }
+  .long-tail-page .interest-scene { aspect-ratio: 4/3; }
+  .long-tail-page .interest-background .interest-sample-note { text-align: left; line-height: 1.8; }
+  .long-tail-page .interest-distribution { grid-template-columns: 1fr; gap: 24px; margin-top: 60px; }
+  .long-tail-page .interest-distribution h3 { max-width: 14em; font-size: 22px; }
+  .long-tail-page .interest-distribution-copy p { margin-top: 14px; }
+  .long-tail-page .interest-distribution figure { padding: 14px 10px 8px; border-radius: 16px; }
+  .long-tail-page .interest-distribution .interest-media-controls { justify-content: center; font-size: 12px; gap: 0; }
+  .long-tail-page .interest-conclusion { margin-top: 24px; }
+  .long-tail-page .interest-conclusion h3 { font-size: 22px; max-width: 14em; }
+  .long-tail-page .interest-conclusion p { font-size: 15px; }
+  .long-tail-page .interest-values { font-size: 23px; gap: 32px; margin-top: 28px; }
+  .long-tail-page .interest-values span + span::before { left: -22px; font-size: 22px; }
+  .long-tail-page .interest-cloud-dialog { padding: 12px; }
+  .long-tail-page .interest-plan-section { margin-top: 52px; padding-top: 32px; }
+  .long-tail-page .interest-plan-video { width: 100%; padding: 8px 8px 4px; border-radius: 16px; }
+  .long-tail-page .interest-plan-subsection { margin-top: 30px; padding-bottom: 24px; }
+  .long-tail-page .interest-plan-subsection h3 { font-size: 21px; }
+  .long-tail-page .interest-definition { margin-top: 22px; }
+  .long-tail-page .interest-plan .interest-definition-introduction,
+  .long-tail-page .interest-plan .interest-definition-conclusion { font-size: 15px; }
+  .long-tail-page .interest-definition h4 { font-size: 18px; }
+  .long-tail-page .interest-audience-gallery { grid-template-columns: 1fr; gap: 26px; }
+  .long-tail-page .interest-audience-gallery .interest-audience-sample h5 { min-height: 0; }
+  .long-tail-page .interest-audience-image { padding: 8px; border-radius: 12px; }
+  .long-tail-page .interest-plan .interest-definition-conclusion { padding: 4px 0 4px 14px; }
+}
+@media (max-width: 360px) {
+  .long-tail-page .interest-project-header h1 { font-size: 34px; }
+  .long-tail-page .interest-opening .interest-lead { font-size: 20px; }
+  .long-tail-page .interest-platform-heading { gap: 8px; }
+  .long-tail-page .interest-platform-heading h3 { font-size: 14px; }
+  .long-tail-page .interest-values { font-size: 23px; }
+}

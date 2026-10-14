@@ -230,9 +230,125 @@
         `).join("") : ""}
       </div>
     `;
+    const renderInterestBackground = (background) => `
+      <div class="interest-background">
+        <div class="interest-opening">
+          <p class="interest-lead">${background.lead.replace("，", "，<br><span>").replace("。", "。</span>")}</p>
+          <p class="interest-introduction">${background.introduction}</p>
+        </div>
+        <div class="interest-comparison">
+          ${background.platforms.map((platform) => `
+            <section class="interest-platform" aria-label="${platform.name}内容样例">
+              <header class="interest-platform-heading">
+                <span class="interest-platform-name">${platform.name}</span>
+                <h3>${platform.heading}</h3>
+              </header>
+              <figure class="interest-wall">
+                <div class="interest-scene">
+                  <img class="interest-scene-cloud" src="${platform.cloud}" width="1280" height="800" loading="lazy"
+                    alt="${platform.name} Top 内容兴趣点词云，${platform.observation}">
+                  <video muted playsinline loop preload="none" poster="${platform.video}-poster.webp"
+                    data-interest-video="wall" data-webm="${platform.video}.webm" data-mp4="${platform.video}.mp4"
+                    aria-label="${platform.name}手机轮播展示墙"></video>
+                </div>
+                <figcaption class="interest-media-controls">
+                  <button type="button" data-video-toggle>播放</button>
+                  <button type="button" data-video-replay>重播</button>
+                  <button type="button" data-cloud-src="${platform.cloud}"
+                    data-cloud-title="${platform.name} Top 内容兴趣点词云" aria-haspopup="dialog"
+                    aria-label="放大${platform.name} Top 内容兴趣点词云">查看完整词云 ↗</button>
+                </figcaption>
+              </figure>
+              <p class="interest-observation">${platform.observation}</p>
+            </section>
+          `).join("")}
+        </div>
+        <p class="interest-sample-note">${background.sampleNote}</p>
+        <section class="interest-distribution" aria-label="兴趣曝光的长尾分布">
+          <div class="interest-distribution-copy">
+            <span class="interest-section-label">流量分布</span>
+            <h3>${background.distributionTitle}</h3>
+            <p>${background.distributionText}</p>
+            <div class="interest-conclusion">
+              <h3>${background.conclusionTitle}</h3>
+              <p>${background.conclusionText} <strong>${background.values.join("、")}</strong> 发展。</p>
+            </div>
+            <div class="interest-values" aria-hidden="true">${background.values.map((value) => `<span>${value}</span>`).join("")}</div>
+          </div>
+          <div class="interest-distribution-media">
+          <figure>
+            <video muted playsinline preload="none" poster="${background.distributionPoster}"
+              data-interest-video="distribution" data-mp4="${background.distributionVideo}"
+              aria-label="兴趣曝光排序动画：按受众人数从高到低排列，头部在左、长尾在右"></video>
+            <figcaption class="interest-media-controls">
+              <span>按受众人数从高到低排序 · 曝光量（VV）示意</span>
+              <div>
+                <button type="button" data-video-toggle>播放</button>
+                <button type="button" data-video-replay>重播动画</button>
+              </div>
+            </figcaption>
+          </figure>
+          <p class="interest-distribution-note">${background.distributionNote}</p>
+          </div>
+        </section>
+        <dialog class="interest-cloud-dialog" aria-labelledby="interest-cloud-title">
+          <div class="interest-dialog-heading">
+            <h3 id="interest-cloud-title"></h3>
+            <button type="button" data-cloud-close aria-label="关闭词云大图">关闭 ×</button>
+          </div>
+          <img alt="">
+        </dialog>
+      </div>
+    `;
+    const renderInterestSample = (sample, common = false) => `
+      <figure class="interest-audience-sample ${common ? "interest-audience-common" : ""}">
+        <h5>${sample.title}</h5>
+        <button type="button" class="interest-audience-image" data-cloud-src="${sample.image}"
+          data-cloud-title="${sample.title}" aria-haspopup="dialog" aria-label="放大${sample.title}词云">
+          <img src="${sample.image}" width="1280" height="800" loading="lazy" alt="${sample.title}词云">
+          <span>查看大图 ↗</span>
+        </button>
+        <figcaption>${sample.description}</figcaption>
+      </figure>
+    `;
+    const renderInterestDefinition = (definition) => `
+      <div class="interest-definition">
+        <p class="interest-definition-introduction">${definition.introduction}</p>
+        <div class="interest-definition-rules">${renderCaseTable(definition.table)}</div>
+        <h4>${definition.comparisonTitle}</h4>
+        <p class="interest-definition-note">${definition.comparisonNote}</p>
+        <div class="interest-audience-gallery">
+          ${renderInterestSample(definition.common, true)}
+          ${definition.differences.map((sample) => renderInterestSample(sample)).join("")}
+        </div>
+        <p class="interest-definition-conclusion">${definition.conclusion}</p>
+      </div>
+    `;
+    const renderInterestPlan = (plan) => `
+      <div class="interest-plan">
+        <figure class="interest-plan-video">
+          <video muted playsinline preload="none" poster="${plan.poster}"
+            data-interest-video="plan" data-mp4="${plan.video}"
+            aria-label="产品方案的三个问题：长尾兴趣定义、分发价值与推荐链路卡点"></video>
+          <figcaption class="interest-media-controls">
+            <button type="button" data-video-toggle>播放</button>
+            <button type="button" data-video-replay>重播</button>
+          </figcaption>
+        </figure>
+        ${plan.subsections.map((subsection) => `
+          <section class="interest-plan-subsection">
+            <h3>${subsection.title}</h3>
+            <p class="interest-plan-prompt">${subsection.prompt}</p>
+            ${subsection.definition ? renderInterestDefinition(subsection.definition) : `<p class="interest-plan-placeholder">${subsection.content}</p>`}
+          </section>
+        `).join("")}
+      </div>
+    `;
     const renderDetailSection = (section, index) => `
-      <section class="detail-block ${index === 0 ? "first-detail-block" : ""} detail-prose project-case-section">
+      <section class="detail-block ${index === 0 ? "first-detail-block" : ""} ${section.longTailPlan ? "interest-plan-section" : ""} detail-prose project-case-section">
         <h2>${section.title}</h2>
+        ${section.longTailBackground ? renderInterestBackground(section.longTailBackground) : ""}
+        ${section.longTailPlan ? renderInterestPlan(section.longTailPlan) : ""}
         ${renderDetailContent(section)}
         ${section.subsections ? section.subsections.map(renderDetailSubsection).join("") : ""}
         ${section.footerNote ? `<blockquote class="case-note case-footer-note">${section.footerNote}</blockquote>` : ""}
@@ -263,14 +379,160 @@
       </section>
     `;
 
-    target.innerHTML = `
-      <a class="back-link" href="index.html#projects">返回项目列表</a>
+    const headerHTML = project.id === "long-tail-interest" ? `
+      <header class="interest-project-header">
+        <div>
+          <p class="section-kicker">产品策略 / 内容生态</p>
+          <h1>长尾兴趣<span>项目</span></h1>
+        </div>
+        <div class="interest-project-overview">
+          <p class="detail-summary">${project.summary}</p>
+          <div class="tags">${project.tags.map(tagHTML).join("")}</div>
+        </div>
+      </header>
+    ` : `
       <p class="section-kicker">Project Case</p>
       <h1>${project.title}</h1>
       <p class="detail-summary">${project.summary}</p>
       <div class="tags">${project.tags.map(tagHTML).join("")}</div>
+    `;
+    target.innerHTML = `
+      <a class="back-link" href="index.html#projects">返回项目列表</a>
+      ${headerHTML}
       ${customDetailHTML || placeholderHTML}
     `;
+    if (project.id === "long-tail-interest") {
+      document.body.classList.add("long-tail-page");
+      target.closest(".detail-shell").classList.add("long-tail-shell");
+      setupInterestMedia(target);
+    }
+  }
+
+  function setupInterestMedia(target) {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const videos = Array.from(target.querySelectorAll("[data-interest-video]"));
+    const states = new Map();
+    const loadVideo = (video) => {
+      if (video.getAttribute("src")) return;
+      // WebKit uses an MP4 with the same word-cloud backdrop baked in.
+      const useWebM = video.dataset.webm && !/Apple/.test(navigator.vendor) &&
+        video.canPlayType('video/webm; codecs="vp9"');
+      video.src = useWebM ? video.dataset.webm : video.dataset.mp4;
+      video.load();
+    };
+    const playVideo = (video) => {
+      loadVideo(video);
+      video.play().catch(() => {
+        // Autoplay can be blocked by a browser; the poster and play control remain usable.
+      });
+    };
+    const resumeVisible = (video) => {
+      const state = states.get(video);
+      if (state.visible && !state.userPaused && !state.ended && !document.hidden && !reducedMotion.matches && !target.querySelector("dialog")?.open) {
+        playVideo(video);
+      }
+    };
+    videos.forEach((video) => {
+      const state = { visible: false, userPaused: false, ended: false, observerPaused: false };
+      states.set(video, state);
+      video.muted = true;
+      const figure = video.closest("figure");
+      const toggle = figure.querySelector("[data-video-toggle]");
+      const syncToggle = () => {
+        if (toggle) {
+          toggle.textContent = video.paused ? "播放" : "暂停";
+          toggle.setAttribute("aria-label", `${video.paused ? "播放" : "暂停"}${video.getAttribute("aria-label")}`);
+        }
+      };
+      syncToggle();
+      if (toggle) toggle.addEventListener("click", () => {
+        if (video.paused) {
+          state.userPaused = false;
+          playVideo(video);
+        } else {
+          state.userPaused = true;
+          video.pause();
+        }
+      });
+      figure.querySelector("[data-video-replay]").addEventListener("click", () => {
+        state.ended = false;
+        state.userPaused = false;
+        loadVideo(video);
+        video.currentTime = 0;
+        playVideo(video);
+      });
+      video.addEventListener("play", () => {
+        state.userPaused = false;
+        state.ended = false;
+        syncToggle();
+      });
+      video.addEventListener("pause", () => {
+        if (!state.observerPaused && state.visible && !video.ended) state.userPaused = true;
+        state.observerPaused = false;
+        syncToggle();
+      });
+      video.addEventListener("ended", () => { state.ended = true; syncToggle(); });
+      video.addEventListener("error", () => {
+        if (video.src.endsWith(".webm")) {
+          video.src = video.dataset.mp4;
+          video.load();
+          resumeVisible(video);
+        } else {
+          state.userPaused = true;
+          let message = figure.querySelector(".interest-media-error");
+          if (!message) {
+            message = document.createElement("p");
+            message.className = "interest-media-error";
+            message.setAttribute("role", "status");
+            message.textContent = "视频暂时无法播放，可先查看预览图。";
+            figure.append(message);
+          }
+        }
+      });
+    });
+    const pauseAutomatically = (video) => {
+      if (!video.paused) {
+        states.get(video).observerPaused = true;
+        video.pause();
+      }
+    };
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(({ target: video, isIntersecting }) => {
+          states.get(video).visible = isIntersecting;
+          if (isIntersecting) { loadVideo(video); resumeVisible(video); }
+          else pauseAutomatically(video);
+        });
+      }, { threshold: 0.35 });
+      videos.forEach((video) => observer.observe(video));
+    } else {
+      videos.forEach(loadVideo);
+    }
+    document.addEventListener("visibilitychange", () => {
+      videos.forEach((video) => document.hidden ? pauseAutomatically(video) : resumeVisible(video));
+    });
+    reducedMotion.addEventListener("change", () => {
+      videos.forEach((video) => reducedMotion.matches ? pauseAutomatically(video) : resumeVisible(video));
+    });
+    const dialog = target.querySelector(".interest-cloud-dialog");
+    target.querySelectorAll("[data-cloud-src]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const title = button.dataset.cloudTitle;
+        dialog.querySelector("h3").textContent = title;
+        const image = dialog.querySelector("img");
+        image.src = button.dataset.cloudSrc;
+        image.alt = title;
+        dialog.showModal();
+        document.body.classList.add("interest-modal-open");
+        videos.forEach(pauseAutomatically);
+      });
+    });
+    dialog.querySelector("[data-cloud-close]").addEventListener("click", () => dialog.close());
+    dialog.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener("close", () => {
+      document.body.classList.remove("interest-modal-open");
+      videos.forEach(resumeVisible);
+    });
   }
 
   function renderResearchDetail() {

@@ -114,7 +114,94 @@ window.siteData = {
       title: "长尾兴趣项目",
       summary: "针对平台流量过度向热门内容倾斜导致小众兴趣分发不足的痛点，主导“基建调优-价值验证-链路诊断-实验验证-策略推全”全流程，系统性提升长尾内容分发效率。",
       tags: ["长尾兴趣", "内容分发", "生态多元", "策略实验"],
-      status: "详情待补充"
+      status: "背景已补充",
+      detailPage: {
+        sections: [{
+          title: "一、项目背景",
+          longTailBackground: {
+            lead: "热门内容获得集中曝光，长尾兴趣仍有分发空间。",
+            introduction: "平台内容曝光更多集中于受众广泛的热门兴趣，小众、细分兴趣的曝光相对有限。如何让这些内容被感兴趣的用户看见，是长尾兴趣项目的出发点。",
+            platforms: [
+              {
+                name: "抖音",
+                heading: "热门内容中的兴趣点",
+                video: "assets/long-tail-interest/douyin-wall-v2",
+                cloud: "assets/long-tail-interest/douyin-cloud.png",
+                observation: "颜值自拍、情感、宠物等大众兴趣较突出"
+              },
+              {
+                name: "小红书",
+                heading: "热门内容中的兴趣点",
+                video: "assets/long-tail-interest/xiaohongshu-wall-v2",
+                cloud: "assets/long-tail-interest/xiaohongshu-cloud.png",
+                observation: "游戏、偶像、特定 IP 等细分兴趣更可见"
+              }
+            ],
+            sampleNote: "内容样例与兴趣词云用于展示差异，不代表平台整体分布。",
+            distributionTitle: "从内容差异，到兴趣曝光的长尾分布",
+            distributionText: "将兴趣点按受众人数从高到低排列，曝光量（VV）呈现长尾分布：头部兴趣获得集中曝光，而数量众多的细分兴趣，单个获得的曝光较少。",
+            distributionNote: "受众规则简单地基于用户对兴趣点的互动数据呈现，具体规则由下文展开论述",
+            distributionVideo: "assets/long-tail-interest/interest-distribution-v2.mp4",
+            distributionPoster: "assets/long-tail-interest/interest-distribution-poster.jpg",
+            conclusionTitle: "让细分兴趣获得更多被看见的机会。",
+            conclusionText: "通过提升长尾兴趣内容的分发效率，更好地满足用户的差异化兴趣需求，推动内容生态向",
+            values: ["多元化", "均衡化", "个性化"]
+          }
+        }, {
+          title: "二、产品方案",
+          longTailPlan: {
+            video: "assets/long-tail-interest/product-plan-questions.mp4",
+            poster: "assets/long-tail-interest/product-plan-questions-poster.webp",
+            subsections: [
+              {
+                title: "2.1 长尾兴趣的定义",
+                prompt: "如何定义兴趣的受众规则，以及“长尾”的阈值？",
+                definition: {
+                  introduction: "兴趣的受众规模，是识别长尾兴趣的基础。不同的用户行为规则，影响到一个兴趣点匹配到的受众人群，同时也会影响受众人数的统计，进而影响哪些兴趣被划入长尾范围。因此，我们对比了两套受众刻画方案，评估其识别结果是否符合项目希望扶持的小众、细分兴趣方向。",
+                  table: {
+                    columns: ["比较维度", "方案 A：近期消费或正向互动", "方案 B：持续消费或强互动"],
+                    rows: [
+                      ["时间窗口", "过去 7 天", "过去 30 天"],
+                      ["受众规则", "有效消费 &gt; 5，<strong>或</strong>正向互动 &gt; 0", "（消费天数 &gt; 2 且消费 VV &gt; 5），<strong>或</strong>发生强互动"],
+                      ["补充说明", "正向互动包括点赞、收藏、评论、分享、关注", "强互动的具体口径待补充"]
+                    ]
+                  },
+                  comparisonTitle: "① 定性比较：先看共同识别的兴趣，再看差异",
+                  comparisonNote: "抽样观察两套方案识别出的长尾兴趣及对应视频内容，分别比较共同识别的兴趣与各自独有的兴趣，判断其与目标内容画风的契合程度。",
+                  common: {
+                    title: "两套方案共同识别的兴趣",
+                    image: "assets/long-tail-interest/audience-common.webp",
+                    description: "两套方案都能覆盖影视综音、二次元、偶像活动、攻略及兴趣爱好等内容，具有一定共同基础。"
+                  },
+                  differences: [
+                    {
+                      title: "方案 A 独有的兴趣",
+                      image: "assets/long-tail-interest/audience-method-a-styled.webp",
+                      description: "代表兴趣包括影视综音、明星偶像、大学校园生活、游戏、社会资讯等。"
+                    },
+                    {
+                      title: "方案 B 独有的兴趣",
+                      image: "assets/long-tail-interest/audience-method-b-styled.webp",
+                      description: "代表兴趣包括 CS 系列、西游记 IP、轻欧美妆、亚裔美妆、可穿戴数码等。"
+                    }
+                  ],
+                  conclusion: "从差集样例来看，方案 A 识别出的部分兴趣具有更明确的游戏、IP、圈层文化及细分消费特征，更贴近项目希望扶持的小众、个性化内容方向。因此，在定性判断上更倾向方案 A，后续结合定量结果进一步验证。"
+                }
+              },
+              {
+                title: "2.2 长尾兴趣内容的分发价值",
+                prompt: "长尾兴趣的内容，是否有分发价值？ 价值空间有多大？",
+                content: "内容待填充"
+              },
+              {
+                title: "2.3 长尾兴趣内容的链路卡点",
+                prompt: "长尾兴趣的内容，卡在推荐链路的哪个环节？",
+                content: "内容待填充"
+              }
+            ]
+          }
+        }]
+      }
     },
     {
       id: "tgi-generalization",

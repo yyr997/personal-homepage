@@ -205,8 +205,21 @@ window.siteData = {
               },
               {
                 title: "2.2 长尾兴趣内容的分发价值",
-                prompt: "长尾兴趣的内容，是否有分发价值？ 价值空间有多大？",
-                content: "内容待填充"
+                prompt: "长尾兴趣的内容，是否有分发价值？价值空间有多大？",
+                distributionValue: {
+                  introduction: "从内容样例来看，长尾兴趣能够识别出二次元、影视综艺与追星、小众游戏、科技数码、兴趣爱好、地方美食、家居装修等欠分发的细分兴趣。",
+                  transition: "进一步结合消费来源、触达效率与后验表现，评估这些内容的分发价值。",
+                  observations: [
+                    { title: "① 消费来源：细分兴趣需求在主动场景中更突出", text: "兴趣受众规模越小，搜索、关注页等主动场景的消费与互动占比越高。这表明长尾兴趣有更多的消费需求是通过<strong>搜索/个人页等主动消费场景</strong>进行承接的。", image: "assets/long-tail-interest/value-interest-samples.png", caption: "长尾兴趣内容样例" },
+                    { title: "② 触达效率：长尾兴趣仍有较大的受众触达空间", text: "非长尾兴趣的 1 日触达率为 <strong>50%+</strong>，长尾兴趣为 <strong>18%+</strong>；7 日触达率分别为 <strong>80%+</strong> 和 <strong>40%+</strong>。相比非长尾兴趣，长尾兴趣对已有受众的触达仍不充分，存在较大的分发拓展空间。", video: "assets/long-tail-interest/value-reach.mp4", poster: "assets/long-tail-interest/value-reach-poster.jpg" },
+                    { title: "③ 后验表现：长尾内容具备正向互动价值", text: "长尾兴趣内容在点赞、评论、收藏、关注等多项正向指标上优于非长尾兴趣，体现出较好的互动表现。结合较低的受众触达率，长尾内容具有进一步探索分发的价值。", video: "assets/long-tail-interest/value-performance.mp4", poster: "assets/long-tail-interest/value-performance-poster.jpg" }
+                  ],
+                  ecologyTitle: "④ 内容生态：推动“头部驱动”向“头部＋长尾协同”演进",
+                  ecologyText: "头部 <strong>2,000 多个兴趣点</strong>占据大盘 <strong>70% 多的 VV</strong>，其余 <strong>4 万多个有效兴趣点</strong>仅占 <strong>20% 多的 VV</strong>，内容曝光明显集中于头部。",
+                  ecologyMeaning: "扶持长尾兴趣，既是探索分发增量的机会，也是让更多细分内容连接对应受众、推动平台内容结构更加多元与均衡的过程。",
+                  conclusionTitle: "长尾兴趣具备进一步探索分发的价值。",
+                  conclusionText: "用户主动需求、受众触达缺口与正向互动表现，共同支持对长尾内容开展分发优化，并通过后续实验验证实际收益。"
+                }
               },
               {
                 title: "2.3 长尾兴趣内容的链路卡点",

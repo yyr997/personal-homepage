@@ -362,6 +362,27 @@
         ${definition.quantitative ? renderInterestQuantitative(definition.quantitative) : ""}
       </div>
     `;
+    const renderInterestValue = (value) => `
+      <div class="interest-value interest-definition">
+        <div class="interest-value-opening">
+          <figure class="interest-value-sample interest-quant-video">
+            <button type="button" class="interest-audience-image" data-cloud-src="${value.observations[0].image}" data-cloud-title="${value.observations[0].caption}" aria-haspopup="dialog" aria-label="放大${value.observations[0].caption}">
+              <img src="${value.observations[0].image}" loading="lazy" alt="${value.observations[0].caption}"><span>查看大图 ↗</span>
+            </button><figcaption>${value.observations[0].caption}</figcaption>
+          </figure>
+          <p class="interest-definition-introduction">${value.introduction}</p>
+        </div>
+        <p class="interest-value-transition">${value.transition}</p>
+        <div class="interest-value-videos">
+          ${value.observations.filter((item) => item.video).map(renderQuantVideo).join("")}
+        </div>
+        <div class="interest-value-analysis">
+          ${value.observations.map((item) => `<section class="interest-quant-block"><h5>${item.title}</h5><p>${item.text}</p></section>`).join("")}
+          <section class="interest-quant-block"><h5>${value.ecologyTitle}</h5><p>${value.ecologyText}</p></section>
+        </div>
+        <p class="interest-value-closing">${value.ecologyMeaning}</p>
+      </div>
+    `;
     const renderInterestPlan = (plan) => `
       <div class="interest-plan">
         <figure class="interest-plan-video">
@@ -377,7 +398,7 @@
           <section class="interest-plan-subsection">
             <h3>${subsection.title}</h3>
             <p class="interest-plan-prompt">${subsection.prompt}</p>
-            ${subsection.definition ? renderInterestDefinition(subsection.definition) : `<p class="interest-plan-placeholder">${subsection.content}</p>`}
+            ${subsection.definition ? renderInterestDefinition(subsection.definition) : subsection.distributionValue ? renderInterestValue(subsection.distributionValue) : `<p class="interest-plan-placeholder">${subsection.content}</p>`}
           </section>
         `).join("")}
       </div>

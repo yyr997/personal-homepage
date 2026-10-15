@@ -229,3 +229,19 @@ body.interest-modal-open { overflow: hidden; }
   .long-tail-page .interest-platform-heading h3 { font-size: 14px; }
   .long-tail-page .interest-values { font-size: 23px; }
 }
+
+.long-tail-page .interest-value h5 { margin: 0; color: var(--text); font-size: 17px; font-weight: 600; line-height: 1.6; }
+.long-tail-page .interest-value-opening { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr); gap: 32px; align-items: center; }
+.long-tail-page .interest-value-opening .interest-definition-introduction { margin: 0; }
+.long-tail-page .interest-value-sample figcaption { padding: 8px 0; text-align: center; color: #768398; font-size: 14px; line-height: 1.8; }
+.long-tail-page .interest-plan .interest-value-transition { margin: 28px 0 20px; color: var(--muted); font-size: 16px; line-height: 1.9; }
+.long-tail-page .interest-value-videos { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px; }
+.long-tail-page .interest-value-analysis { margin-top: 32px; }
+.long-tail-page .interest-value-analysis .interest-quant-block { margin-top: 24px; }
+.long-tail-page .interest-plan .interest-value-closing { margin: 32px 0 0; color: var(--text); font-size: 20px; font-weight: 500; line-height: 1.85; }
+@media (max-width:700px) {
+  .long-tail-page .interest-value-opening,
+  .long-tail-page .interest-value-videos { grid-template-columns: 1fr; gap: 24px; }
+  .long-tail-page .interest-plan .interest-value-transition { font-size: 15px; }
+  .long-tail-page .interest-plan .interest-value-closing { font-size: 18px; }
+}

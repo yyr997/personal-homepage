@@ -185,7 +185,22 @@ window.siteData = {
                       description: "代表兴趣包括 CS 系列、西游记 IP、轻欧美妆、亚裔美妆、可穿戴数码等。"
                     }
                   ],
-                  conclusion: "从差集样例来看，方案 A 识别出的部分兴趣具有更明确的游戏、IP、圈层文化及细分消费特征，更贴近项目希望扶持的小众、个性化内容方向。因此，在定性判断上更倾向方案 A，后续结合定量结果进一步验证。"
+                  conclusion: "从差集样例来看，方案 A 识别出的部分兴趣具有更明确的游戏、IP、圈层文化及细分消费特征，更贴近项目希望扶持的小众、个性化内容方向。因此，在定性判断上更倾向方案 A，后续结合定量结果进一步验证。",
+                  quantitative: {
+                    title: "② 定量比较：比较覆盖范围、后验表现与触达空间",
+                    note: "对比抖音与竞品兴趣点的互动率，将抖音互动率较低的兴趣点定义为“劣势兴趣”，形成约 1 万个兴趣点的观察集合，进一步比较两套方案对这些兴趣的覆盖及表现。",
+                    coverageTitle: "覆盖范围：方案 A 覆盖了更多劣势兴趣",
+                    coverageText: "在劣势兴趣集合中，方案 A 识别的长尾兴趣覆盖率为 <strong>93+%</strong>，方案 B 为 <strong>85+%</strong>，方案 A 高出 <strong>近 8 个百分点</strong>，能够将更多存在改善空间的兴趣纳入扶持范围。",
+                    metrics: [{ label: "方案 A · 长尾兴趣覆盖率", value: "93+%" }, { label: "方案 B · 长尾兴趣覆盖率", value: "85+%" }, { label: "方案 A 覆盖优势", value: "近 8", unit: "个百分点" }],
+                    performanceTitle: "后验表现：共同覆盖与各自独有的劣势兴趣中，方案 A 均表现出优势",
+                    comparisons: [
+                      { title: "共同覆盖的劣势兴趣", text: "对于两套方案共同覆盖的劣势兴趣，方案 A 在完播、点赞、评论、点击头像、分享、关注、收藏及主动场景 VV 占比等多项后验指标上优于方案 B。", video: "assets/long-tail-interest/quant-common.mp4", poster: "assets/long-tail-interest/quant-common-poster.jpg" },
+                      { title: "各自独有的劣势兴趣", text: "对于两套方案各自独有的劣势兴趣，方案 A 在完播、点赞、分享、关注、收藏及进入主页等指标上优于方案 B。", video: "assets/long-tail-interest/quant-difference.mp4", poster: "assets/long-tail-interest/quant-difference-poster.jpg" }
+                    ],
+                    reach: { title: "触达空间：方案 A 具备更大的分发拓展空间", text: "进一步比较两套方案识别的长尾兴趣触达空间，方案 A 明显高于方案 B，体现出更大的潜在分发空间。", video: "assets/long-tail-interest/quant-reach.mp4", poster: "assets/long-tail-interest/quant-reach-poster.jpg" },
+                    conclusionTitle: "结合定性与定量结果，选择方案 A 作为兴趣受众的刻画规则。",
+                    conclusionText: "方案 A 识别出的兴趣更贴近项目希望扶持的小众、细分内容方向，同时覆盖更多劣势兴趣，后验表现更好、触达空间更大。"
+                  }
                 }
               },
               {

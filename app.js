@@ -311,6 +311,43 @@
         <figcaption>${sample.description}</figcaption>
       </figure>
     `;
+    const renderQuantVideo = (item) => `
+      <figure class="interest-quant-video">
+        <video muted playsinline preload="none" poster="${item.poster}"
+          data-interest-video="quantitative" data-mp4="${item.video}" aria-label="${item.title}"></video>
+        <figcaption class="interest-media-controls">
+          <button type="button" data-video-toggle>播放</button>
+          <button type="button" data-video-replay>重播</button>
+        </figcaption>
+      </figure>
+    `;
+    const renderInterestQuantitative = (quant) => `
+      <section class="interest-quantitative">
+        <h4>${quant.title}</h4>
+        <p class="interest-definition-note">${quant.note}</p>
+        <section class="interest-quant-block">
+          <h5>${quant.coverageTitle}</h5>
+          <p>${quant.coverageText}</p>
+          <div class="interest-quant-metrics">
+            ${quant.metrics.map((metric) => `<div><span>${metric.label}</span><strong>${metric.value}${metric.unit ? `<small>${metric.unit}</small>` : ""}</strong></div>`).join("")}
+          </div>
+        </section>
+        <section class="interest-quant-block">
+          <h5>${quant.performanceTitle}</h5>
+          <div class="interest-quant-comparisons">
+            ${quant.comparisons.map((item) => `<section class="interest-quant-comparison"><div class="interest-quant-copy"><h6>${item.title}</h6><p>${item.text}</p></div>${renderQuantVideo(item)}</section>`).join("")}
+          </div>
+        </section>
+        <section class="interest-quant-block interest-quant-reach">
+          <div><h5>${quant.reach.title}</h5><p>${quant.reach.text}</p></div>
+          ${renderQuantVideo(quant.reach)}
+        </section>
+        <div class="interest-quant-decision">
+          <h5>${quant.conclusionTitle}</h5>
+          <p>${quant.conclusionText}</p>
+        </div>
+      </section>
+    `;
     const renderInterestDefinition = (definition) => `
       <div class="interest-definition">
         <p class="interest-definition-introduction">${definition.introduction}</p>
@@ -322,6 +359,7 @@
           ${definition.differences.map((sample) => renderInterestSample(sample)).join("")}
         </div>
         <p class="interest-definition-conclusion">${definition.conclusion}</p>
+        ${definition.quantitative ? renderInterestQuantitative(definition.quantitative) : ""}
       </div>
     `;
     const renderInterestPlan = (plan) => `
